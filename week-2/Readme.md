@@ -60,7 +60,7 @@ In a high level this is what we are sending to the backend server
 Similarly there are many libraries that let you create HTTP Servers. The most famous one is express. We are going to use Express & NodeJs to create a HTTP Server
 
 
-## Week 2.3 (Bash Terminal)
+## Week 2.3 & Week 2.4 (Bash Terminal)
 
 1. `pwd` : present working directory 
 2. `cd` : change dir
@@ -70,5 +70,55 @@ Similarly there are many libraries that let you create HTTP Servers. The most fa
 6. `cat` : show the content of the file and many other func
 7. `vi` : start a visual editor
 8. `mv` : move the file or folder
-9.  `cp` :  copy a file or folder
+9. `cp` :  copy a file or folder
 10. `nvm` : uses to set the node version
+
+## Week 2.5 (Express and HTTP with real world examples Postman)
+
+Taking an example of doctor. There's a doctor who studied went to college and got his degree but to share it to the world he either has to open his own clinic or have to work at an hospital. In the same way you have written your code but for people to acess the functionality of your code (eg calculator) or the knowledge of the doctor you will have to visit to the hospital or in our case import Express to write an HTTP server.
+
+So express people have wrtoe some code by using which you can expose your code to the internet.
+
+[Lecture Example HTTP code](./Lectures/HTTP-Server/http.js)
+
+
+```js
+const express = require("express")
+
+// creating the clinic
+const app  = express();
+console.log("running on port 3000")
+
+// doctor taking a clinic
+app.listen(3000)
+```
+
+This will written `Cannot GET /` as a default from express since we have not set 
+
+```js
+// req, res ==> request to take (inputs, headers) , responds to send (status code)
+app.get("/", function(res, req){
+    
+})
+```
+
+this is a callback function and will send the function anytime someone hits the endpoint  ie. (`/`)
+
+#### Request Methods
+
+1. `GET`: to get something from OR Going for a consultation to get a check up
+2. `POST`: Posting something on linkedin OR Going to get a new kidney inserted
+3. `PUT`: Adding something to the request OR Going to get a kidney replaced
+4. `DELETE`: Removing something OR Going to get a kidney removed
+
+#### Status Codes
+
+1. `200` : Code working OR Everything went fine.
+2. `404` : Backend Not working OR Doctor is not present
+3. `500` : somethign went wrong when doing OR Mid Surgery light went away
+4. `411` : Inputs were incorrect OR wrong person came to surgery
+5. `403` : Access Denied OR Not allowed in the hospital
+
+#### Class Assignment
+
+[InMemory Hospital](./Lectures/Hospital/)
